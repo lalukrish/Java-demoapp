@@ -1,14 +1,21 @@
 package com.test.DemoApp.model;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Data;
 
 @Data
+@Entity
 public class Product {
-
+    @Id
     private int prodId;
     private String prodName;
     private int price;
+
+    // ✅ Add this default constructor
+    public Product() {
+    }
 
     public int getProdId() {
         return prodId;
